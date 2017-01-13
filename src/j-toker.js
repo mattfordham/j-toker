@@ -115,6 +115,7 @@
       storage:               'cookies',
       cookieExpiry:          14,
       cookiePath:            '/',
+      cookieDomain:          null,
       initialCredentials:    null,
 
       passwordResetSuccessUrl: function() {
@@ -1077,7 +1078,8 @@
       default:
         $.cookie(key, val, {
           expires: this.getConfig(config).cookieExpiry,
-          path:    this.getConfig(config).cookiePath
+          path:    this.getConfig(config).cookiePath,
+          domain:  this.getConfig(config).cookieDomain
         });
         break;
     }
